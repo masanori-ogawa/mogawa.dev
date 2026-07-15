@@ -1,0 +1,25 @@
+{
+  "name": "mogawa-dev",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev:api": "bun run --filter @mogawa/api dev",
+    "dev:site": "bun run --filter @mogawa/site dev",
+    "dev:console": "bun run --filter @mogawa/console dev",
+    "build": "bun run --filter '@mogawa/*' --sequential --elide-lines=0 build",
+    "typecheck": "bun run --filter '@mogawa/*' --sequential --elide-lines=0 typecheck",
+    "test": "bun run --filter '@mogawa/*' --sequential --elide-lines=0 test",
+    "db:generate": "bun run --filter @mogawa/db db:generate",
+    "db:migrate": "bun run --filter @mogawa/db db:migrate",
+    "db:studio": "bun run --filter @mogawa/db db:studio",
+    "cf-typegen": "bun run --filter @mogawa/api cf-typegen && bun run --filter @mogawa/site cf-typegen && bun run --filter @mogawa/console cf-typegen"
+  },
+  "devDependencies": {
+    "typescript": "^5.9.3",
+    "vitest": "^3.2.4"
+  },
+  "packageManager": "bun@1.3.11"
+}

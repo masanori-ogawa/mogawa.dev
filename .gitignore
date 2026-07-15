@@ -1,0 +1,30 @@
+# dependencies
+node_modules/
+
+# env / secrets
+.env
+.env.*
+!.env.example
+.dev.vars
+.dev.vars.*
+!.dev.vars.example
+
+# build
+dist/
+.output/
+.vinxi/
+.tanstack/
+.wrangler/
+worker-configuration.d.ts
+
+# logs / cache
+*.log
+.DS_Store
+.cache/
+coverage/
+*.tsbuildinfo
+
+# editors
+.idea/
+.vscode/*
+!.vscode/extensions.json

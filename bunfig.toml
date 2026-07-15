@@ -1,0 +1,3 @@
+[install]
+# Allow recent Clerk/TanStack releases; tighten again later if desired.
+minimumReleaseAge = 0
