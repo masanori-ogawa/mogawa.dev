@@ -1,6 +1,6 @@
 import { createApiClient } from '@mogawa/api-client'
 import type { Post, PostListItem } from '@mogawa/schemas'
-import { getApiUrl } from './site'
+import { getApiUrl } from '#/lib/site'
 
 export function getPublicApiClient() {
   return createApiClient(getApiUrl())

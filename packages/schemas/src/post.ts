@@ -24,7 +24,10 @@ export const createPostSchema = v.object({
     v.minLength(1, '概要は必須です'),
     v.maxLength(500, '概要は500文字以内にしてください'),
   ),
-  body: v.pipe(v.string(), v.minLength(1, '本文は必須です')),
+  body: v.pipe(
+    v.string(),
+    v.minLength(1, '本文は必須です'),
+  ), // PostBody: HTML (Sanitized on API save)
   ogImageUrl: v.optional(
     v.nullable(
       v.union([

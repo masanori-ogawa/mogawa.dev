@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@import "@heroui/styles";
 @plugin "@tailwindcss/typography";
 
 body {
@@ -12,4 +13,31 @@ body {
     "Noto Sans JP",
     system-ui,
     sans-serif;
+}
+
+.tiptap {
+  min-height: 20rem;
+  outline: none;
+}
+
+.tiptap p.is-editor-empty:first-child::before {
+  color: #94a3b8;
+  content: attr(data-placeholder);
+  float: left;
+  height: 0;
+  pointer-events: none;
+}
+
+.tiptap pre {
+  background: #0f172a;
+  color: #e2e8f0;
+  border-radius: 0.75rem;
+  padding: 0.75rem 1rem;
+  overflow-x: auto;
+}
+
+.tiptap img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 0.5rem;
 }

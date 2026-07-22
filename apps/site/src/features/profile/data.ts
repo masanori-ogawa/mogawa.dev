@@ -32,8 +32,8 @@ export const projects = [
   {
     title: 'Technical Blog',
     description:
-      'Markdown ベースの記事投稿と、公開時の静的サイト再ビルドを組み合わせた学習用ブログ。',
-    tags: ['SSG', 'Markdown', 'Cloudflare'],
+      'HTML PostBody の記事投稿と、公開時の静的サイト再ビルドを組み合わせた学習用ブログ。',
+    tags: ['SSG', 'HTML', 'Cloudflare'],
     href: '/blog',
   },
 ]

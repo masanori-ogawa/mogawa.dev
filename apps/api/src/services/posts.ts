@@ -7,6 +7,7 @@ import {
   toPostListItemDto,
   type Database,
 } from '@mogawa/db'
+import { sanitizePostBody } from '@mogawa/html'
 import type { CreatePostInput, UpdatePostInput } from '@mogawa/schemas'
 import type { ApiEnv } from '../env'
 
@@ -52,7 +53,7 @@ export async function createPost(db: Database, input: CreatePostInput) {
     slug: input.slug,
     title: input.title,
     summary: input.summary,
-    body: input.body,
+    body: sanitizePostBody(input.body),
     ogImageUrl: normalizeOgImageUrl(input.ogImageUrl),
     status,
     publishedAt: status === 'published' ? now : null,
@@ -90,7 +91,9 @@ export async function updatePost(
       ...(input.slug !== undefined ? { slug: input.slug } : {}),
       ...(input.title !== undefined ? { title: input.title } : {}),
       ...(input.summary !== undefined ? { summary: input.summary } : {}),
-      ...(input.body !== undefined ? { body: input.body } : {}),
+      ...(input.body !== undefined
+        ? { body: sanitizePostBody(input.body) }
+        : {}),
       ...(input.ogImageUrl !== undefined
         ? { ogImageUrl: normalizeOgImageUrl(input.ogImageUrl) }
         : {}),

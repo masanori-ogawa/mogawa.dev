@@ -1,6 +1,6 @@
 import type { QueryClient } from '@tanstack/react-query'
 import type { Post, PostListItem } from '@mogawa/schemas'
-import { createAuthedApiClient, readApiError } from './api'
+import { createAuthedApiClient, readApiError } from '#/lib/api'
 
 export const postKeys = {
   all: ['posts'] as const,

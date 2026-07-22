@@ -1,6 +1,6 @@
-import { Link, createFileRoute, notFound } from '@tanstack/react-router'
-import { fetchPublishedPost } from '#/lib/api'
-import { markdownToHtml } from '#/lib/markdown'
+import { createFileRoute, notFound } from '@tanstack/react-router'
+import { fetchPublishedPost } from '#/features/blog/api'
+import { BlogPost } from '#/features/blog/components/BlogPost'
 import { getSiteUrl, seo } from '#/lib/site'
 
 export const Route = createFileRoute('/blog/$slug')({
@@ -9,10 +9,7 @@ export const Route = createFileRoute('/blog/$slug')({
     if (!post) {
       throw notFound()
     }
-    return {
-      post,
-      html: markdownToHtml(post.body),
-    }
+    return { post }
   },
   head: ({ loaderData }) => {
     const post = loaderData?.post
@@ -51,35 +48,10 @@ export const Route = createFileRoute('/blog/$slug')({
       ],
     }
   },
-  component: BlogPostPage,
+  component: BlogPostRoute,
 })
 
-function BlogPostPage() {
-  const { post, html } = Route.useLoaderData()
-
-  return (
-    <article className="mx-auto max-w-3xl px-4 py-16">
-      <Link to="/blog" className="text-sm text-blue-600 hover:text-blue-800">
-        ← ブログ一覧
-      </Link>
-      <header className="mt-6">
-        {post.publishedAt ? (
-          <time
-            dateTime={post.publishedAt}
-            className="text-sm text-slate-500"
-          >
-            {new Date(post.publishedAt).toLocaleDateString('ja-JP')}
-          </time>
-        ) : null}
-        <h1 className="mt-2 text-4xl font-semibold tracking-tight">
-          {post.title}
-        </h1>
-        <p className="mt-4 text-lg text-slate-600">{post.summary}</p>
-      </header>
-      <div
-        className="prose prose-slate mt-10 max-w-none"
-        dangerouslySetInnerHTML={{ __html: html }}
-      />
-    </article>
-  )
+function BlogPostRoute() {
+  const { post } = Route.useLoaderData()
+  return <BlogPost post={post} />
 }

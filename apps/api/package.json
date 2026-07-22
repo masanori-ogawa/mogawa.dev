@@ -25,6 +25,7 @@
     "@clerk/backend": "^3.11.4",
     "@hono/standard-validator": "^0.1.5",
     "@mogawa/db": "workspace:*",
+    "@mogawa/html": "workspace:*",
     "@mogawa/schemas": "workspace:*",
     "drizzle-orm": "^0.44.7",
     "hono": "^4.9.10",

@@ -1,5 +1,5 @@
 import { createFileRoute } from '@tanstack/react-router'
-import { PostEditor } from '#/components/PostEditor'
+import { PostEditor } from '#/features/posts/components/PostEditor'
 
 export const Route = createFileRoute('/posts/$id')({
   component: EditPostPage,

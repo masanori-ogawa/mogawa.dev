@@ -6,7 +6,11 @@ import tailwindcss from '@tailwindcss/vite'
 
 export default defineConfig({
   plugins: [
-    cloudflare({ viteEnvironment: { name: 'ssr' } }),
+    cloudflare({
+      viteEnvironment: { name: 'ssr' },
+      // Avoid racing with console when `bun run dev` starts both.
+      inspectorPort: 9229,
+    }),
     tailwindcss(),
     tanstackStart({
       prerender: {

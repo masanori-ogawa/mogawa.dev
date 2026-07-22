@@ -27,3 +27,18 @@ _Avoid_: About content（画面名ではなく情報そのものを指すとき�
 **Blog**:
 公開サイトにおける Post の一覧・詳細の読み取り面。
 _Avoid_: Posts（公開側の機能名は Blog、管理側の機能名は posts）
+
+**Sanitized HTML**:
+許可タグ・属性のみ残した PostBody。API 保存時と公開表示時の両方で生成する。
+_Avoid_: raw HTML（永続化・表示にそのまま使わない）
+
+## Example dialogue
+
+Dev: 「Post を公開したら Blog に出る？」
+Expert: 「Published Post だけが Blog の対象。Draft は出ない。」
+
+Dev: 「本文は Markdown？」
+Expert: 「いや PostBody は HTML。保存前と表示前に Sanitized HTML にする。」
+
+Dev: 「Profile も DB？」
+Expert: 「いまはコード管理の静的情報。Blog の Post とは別。」

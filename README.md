@@ -55,7 +55,13 @@ bun run db:migrate
 
 ### 4. ローカル起動
 
-端末を分けて起動します。
+3アプリをまとめて起動:
+
+```bash
+bun run dev
+```
+
+個別起動も可能です。
 
 ```bash
 bun run dev:api

@@ -6,6 +6,7 @@
     "packages/*"
   ],
   "scripts": {
+    "dev": "bun run --filter './apps/*' --elide-lines=0 dev",
     "dev:api": "bun run --filter @mogawa/api dev",
     "dev:site": "bun run --filter @mogawa/site dev",
     "dev:console": "bun run --filter @mogawa/console dev",
