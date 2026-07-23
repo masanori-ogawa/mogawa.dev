@@ -7,7 +7,7 @@ Webエンジニア向けの個人ブログです。トップが記事一覧に�
 ```text
 src/                 TanStack Start — 公開サイト
 posts/               MDX 記事
-scripts/             sitemap 生成（ビルド時・PUBLIC_SITE_URL 必須）
+scripts/             sitemap 生成（ビルド時・VITE_PUBLIC_SITE_URL 必須）
 ```
 
 ## 技術スタック

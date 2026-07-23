@@ -1,13 +1,13 @@
 export function getSiteUrl() {
   const siteUrl = (
-    import.meta.env.PUBLIC_SITE_URL ||
-    process.env.PUBLIC_SITE_URL ||
+    import.meta.env.VITE_PUBLIC_SITE_URL ||
+    process.env.VITE_PUBLIC_SITE_URL ||
     ''
   ).replace(/\/$/, '')
 
   if (!siteUrl) {
     throw new Error(
-      'PUBLIC_SITE_URL is required. Copy .env.example to .env.local for local development.',
+      'VITE_PUBLIC_SITE_URL is required. Copy .env.example to .env.local for local development.',
     )
   }
 

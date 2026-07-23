@@ -18,4 +18,4 @@ jobs:
       - name: Build
         run: bun run build
         env:
-          PUBLIC_SITE_URL: https://example.com
+          VITE_PUBLIC_SITE_URL: https://example.com

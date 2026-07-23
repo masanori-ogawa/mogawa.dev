@@ -2,10 +2,10 @@ import { mkdir, readdir, readFile, writeFile } from 'node:fs/promises'
 import path from 'node:path'
 import { compareDesc, parseISO } from 'date-fns'
 
-const siteUrl = process.env.PUBLIC_SITE_URL?.replace(/\/$/, '')
+const siteUrl = process.env.VITE_PUBLIC_SITE_URL?.replace(/\/$/, '')
 if (!siteUrl) {
   throw new Error(
-    'PUBLIC_SITE_URL is required. Copy .env.example to .env.local for local builds.',
+    'VITE_PUBLIC_SITE_URL is required. Copy .env.example to .env.local for local builds.',
   )
 }
 
