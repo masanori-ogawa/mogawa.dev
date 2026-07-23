@@ -14,6 +14,18 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
-    "forceConsistentCasingInFileNames": true
-  }
+    "forceConsistentCasingInFileNames": true,
+    "types": ["vite/client", "node"],
+    "paths": {
+      "#/*": ["./src/*"],
+      "content-collections": ["./.content-collections/generated"]
+    }
+  },
+  "include": [
+    "src",
+    "vite.config.ts",
+    "scripts",
+    "content-collections.ts",
+    ".content-collections/generated"
+  ]
 }

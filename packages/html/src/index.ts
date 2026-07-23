@@ -1,1 +1,0 @@
-export { sanitizePostBody } from './sanitize'

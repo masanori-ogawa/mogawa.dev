@@ -1,7 +1,0 @@
-{
-  "version": "7",
-  "dialect": "sqlite",
-  "entries": [
-    "0000_init_posts.sql"
-  ]
-}

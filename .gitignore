@@ -14,6 +14,7 @@ dist/
 .output/
 .vinxi/
 .tanstack/
+.content-collections/
 .wrangler/
 worker-configuration.d.ts
 
