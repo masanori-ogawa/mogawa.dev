@@ -20,7 +20,7 @@ scripts/             sitemap 生成（ビルド時・PUBLIC_SITE_URL 必須）
 
 ```bash
 bun install
-cp .env.example .env
+cp .env.example .env.local
 bun run dev
 ```
 

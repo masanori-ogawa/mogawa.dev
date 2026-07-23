@@ -1,9 +1,17 @@
 export function getSiteUrl() {
-  return (
+  const siteUrl = (
     import.meta.env.PUBLIC_SITE_URL ||
     process.env.PUBLIC_SITE_URL ||
-    'http://localhost:3000'
+    ''
   ).replace(/\/$/, '')
+
+  if (!siteUrl) {
+    throw new Error(
+      'PUBLIC_SITE_URL is required. Copy .env.example to .env.local for local development.',
+    )
+  }
+
+  return siteUrl
 }
 
 export function seo({

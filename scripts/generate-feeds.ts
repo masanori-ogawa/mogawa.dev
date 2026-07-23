@@ -2,10 +2,12 @@ import { mkdir, readdir, readFile, writeFile } from 'node:fs/promises'
 import path from 'node:path'
 import { compareDesc, parseISO } from 'date-fns'
 
-const siteUrl = (process.env.PUBLIC_SITE_URL || 'http://localhost:3000').replace(
-  /\/$/,
-  '',
-)
+const siteUrl = process.env.PUBLIC_SITE_URL?.replace(/\/$/, '')
+if (!siteUrl) {
+  throw new Error(
+    'PUBLIC_SITE_URL is required. Copy .env.example to .env.local for local builds.',
+  )
+}
 
 type FeedPost = {
   slug: string

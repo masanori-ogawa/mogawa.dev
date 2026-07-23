@@ -1,6 +1,6 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
-  "name": "mogawa-site",
+  "name": "mogawa-dev",
   "compatibility_date": "2026-07-08",
   "compatibility_flags": ["nodejs_compat"],
   "main": "@tanstack/react-start/server-entry",
@@ -9,8 +9,5 @@
   },
   "assets": {
     "not_found_handling": "404-page"
-  },
-  "vars": {
-    "PUBLIC_SITE_URL": "http://localhost:3000"
   }
 }
