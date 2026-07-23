@@ -28,12 +28,10 @@ export function seo({
   type?: 'website' | 'article'
 }) {
   const siteUrl = getSiteUrl()
-  const fullTitle = title
-    ? `${title} | Masanori Ogawa`
-    : 'Masanori Ogawa — Web Engineer Portfolio'
+  const fullTitle = title ? `${title} | mogawa.dev` : 'mogawa.dev'
   const desc =
     description ??
-    'Webエンジニア 小川匡教のポートフォリオと技術ブログ。フロントエンド・フルスタック開発の実績と学びをまとめています。'
+    'Web エンジニアリングについてのメモと学びをまとめたブログです。'
   const url = `${siteUrl}${path}`
   const ogImage = image || `${siteUrl}/og-default.svg`
 

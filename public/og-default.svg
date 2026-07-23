@@ -1,6 +1,19 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" fill="none">
-  <rect width="1200" height="630" fill="#0f172a"/>
-  <circle cx="980" cy="90" r="220" fill="#2563eb" fill-opacity="0.35"/>
-  <text x="96" y="280" fill="#ffffff" font-family="Inter, Arial, sans-serif" font-size="72" font-weight="700">Masanori Ogawa</text>
-  <text x="96" y="360" fill="#94a3b8" font-family="Inter, Arial, sans-serif" font-size="40">Web Engineer Portfolio</text>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1200" y2="630" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#eff6ff"/>
+      <stop offset="0.55" stop-color="#f8fafc"/>
+      <stop offset="1" stop-color="#e0f2fe"/>
+    </linearGradient>
+    <linearGradient id="orb" x1="860" y1="40" x2="1180" y2="360" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#7dd3fc"/>
+      <stop offset="0.42" stop-color="#3b82f6"/>
+      <stop offset="1" stop-color="#1e3a8a"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <circle cx="1020" cy="140" r="220" fill="url(#orb)" fill-opacity="0.9"/>
+  <circle cx="160" cy="520" r="160" fill="#7dd3fc" fill-opacity="0.22"/>
+  <text x="96" y="290" fill="#0f172a" font-family="ui-sans-serif, system-ui, sans-serif" font-size="72" font-weight="700">mogawa.dev</text>
+  <text x="96" y="370" fill="#475569" font-family="ui-sans-serif, system-ui, sans-serif" font-size="36">Notes on building for the web</text>
 </svg>

@@ -11,8 +11,7 @@ export function BlogIndex({ posts }: { posts: BlogPost[] }) {
   return (
     <div className="mx-auto max-w-2xl px-4 py-16">
       <header>
-        <h1 className="text-3xl font-semibold tracking-tight">Masanori Ogawa</h1>
-        <p className="mt-1 text-slate-500">小川 匡教 / Web Engineer</p>
+        <h1 className="text-3xl font-semibold tracking-tight">mogawa.dev</h1>
         <p className="mt-6 leading-relaxed text-slate-700">
           フロントエンドを中心に、TypeScript / React
           でのプロダクト開発を行う Web

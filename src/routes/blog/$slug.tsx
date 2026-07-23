@@ -24,10 +24,6 @@ export const Route = createFileRoute('/blog/$slug')({
       description: post.summary,
       datePublished: post.publishedAt,
       image: post.ogImageUrl || undefined,
-      author: {
-        '@type': 'Person',
-        name: 'Masanori Ogawa',
-      },
       mainEntityOfPage: `${siteUrl}/blog/${post.slug}`,
     }
 
