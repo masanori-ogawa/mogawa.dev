@@ -7,7 +7,7 @@ Webエンジニア向けの個人ブログです。トップが記事一覧に�
 ```text
 src/                 TanStack Start — 公開サイト
 posts/               MDX 記事
-scripts/             sitemap / RSS 生成
+scripts/             sitemap 生成（ビルド時・PUBLIC_SITE_URL 必須）
 ```
 
 ## 技術スタック
@@ -37,7 +37,6 @@ bun run dev
 
 ```bash
 bun run typecheck
-bun run test
 bun run build
 ```
 
@@ -50,7 +49,6 @@ bun run build
 ```bash
 bun run dev
 bun run typecheck
-bun run test
 bun run build
 bun run deploy
 ```

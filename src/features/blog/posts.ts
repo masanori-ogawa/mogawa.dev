@@ -1,3 +1,4 @@
+import { compareDesc, parseISO } from 'date-fns'
 import { allPosts } from 'content-collections'
 
 export type BlogPost = (typeof allPosts)[number]
@@ -5,9 +6,8 @@ export type BlogPost = (typeof allPosts)[number]
 export function getPublishedPosts(): BlogPost[] {
   return allPosts
     .filter((post) => !post.draft)
-    .sort(
-      (a, b) =>
-        new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime(),
+    .sort((a, b) =>
+      compareDesc(parseISO(a.publishedAt), parseISO(b.publishedAt)),
     )
 }
 

@@ -1,4 +1,5 @@
 import { Link } from '@tanstack/react-router'
+import { format, parseISO } from 'date-fns'
 import type { BlogPost as BlogPostData } from '#/features/blog/posts'
 
 export function BlogPost({ post }: { post: BlogPostData }) {
@@ -9,7 +10,7 @@ export function BlogPost({ post }: { post: BlogPostData }) {
       </Link>
       <header className="mt-6">
         <time dateTime={post.publishedAt} className="text-sm text-slate-500">
-          {new Date(post.publishedAt).toLocaleDateString('ja-JP')}
+          {format(parseISO(post.publishedAt), 'yyyy/MM/dd')}
         </time>
         <h1 className="mt-2 text-4xl font-semibold tracking-tight">
           {post.title}

@@ -17,13 +17,7 @@ body {
     radial-gradient(circle at top left, rgba(37, 99, 235, 0.08), transparent 40%),
     var(--bg);
   color: var(--fg);
-  font-family:
-    "Inter",
-    "Hiragino Sans",
-    "Noto Sans JP",
-    system-ui,
-    -apple-system,
-    sans-serif;
+  font-family: system-ui, sans-serif;
 }
 
 a {

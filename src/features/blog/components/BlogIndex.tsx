@@ -1,18 +1,26 @@
 import { Link } from '@tanstack/react-router'
+import { format, parseISO } from 'date-fns'
 import type { BlogPost } from '#/features/blog/posts'
-import { profile } from '#/features/profile/data'
+
+const links = [
+  { label: 'GitHub', href: 'https://github.com/masanori-ogawa' },
+  { label: 'X', href: 'https://x.com/masanori_ogawax' },
+]
 
 export function BlogIndex({ posts }: { posts: BlogPost[] }) {
   return (
     <div className="mx-auto max-w-2xl px-4 py-16">
       <header>
-        <h1 className="text-3xl font-semibold tracking-tight">{profile.name}</h1>
-        <p className="mt-1 text-slate-500">
-          {profile.nameJa} / {profile.role}
+        <h1 className="text-3xl font-semibold tracking-tight">Masanori Ogawa</h1>
+        <p className="mt-1 text-slate-500">小川 匡教 / Web Engineer</p>
+        <p className="mt-6 leading-relaxed text-slate-700">
+          フロントエンドを中心に、TypeScript / React
+          でのプロダクト開発を行う Web
+          エンジニアです。型安全な設計と、運用しやすい UI
+          実装を大切にしています。
         </p>
-        <p className="mt-6 leading-relaxed text-slate-700">{profile.summary}</p>
         <ul className="mt-4 flex flex-wrap gap-4 text-sm">
-          {profile.links.map((link) => (
+          {links.map((link) => (
             <li key={link.href}>
               <a
                 href={link.href}
@@ -53,11 +61,7 @@ export function BlogIndex({ posts }: { posts: BlogPost[] }) {
                     dateTime={post.publishedAt}
                     className="shrink-0 text-sm text-slate-500"
                   >
-                    {new Date(post.publishedAt).toLocaleDateString('en-US', {
-                      year: 'numeric',
-                      month: 'short',
-                      day: 'numeric',
-                    })}
+                    {format(parseISO(post.publishedAt), 'MMM d, yyyy')}
                   </time>
                 </Link>
               </li>

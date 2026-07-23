@@ -18,6 +18,10 @@ dist/
 .wrangler/
 worker-configuration.d.ts
 
+# generated at build (needs PUBLIC_SITE_URL)
+public/sitemap.xml
+public/robots.txt
+
 # logs / cache
 *.log
 .DS_Store

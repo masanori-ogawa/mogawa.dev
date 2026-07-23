@@ -20,12 +20,8 @@ _Avoid_: unpublished（状態名は draft）
 公開済みの Post（`draft` でないもの）。静的サイト生成の対象になる。
 _Avoid_: live post
 
-**Profile**:
-トップに載せる短い自己紹介とリンクなど、コード管理される静的な人物情報。
-_Avoid_: About page（独立した About / Projects ページは持たない）
-
 **Blog**:
-トップ（`/`）の記事一覧と、`/blog/$slug` の詳細面。
+トップ（`/`）の記事一覧と、`/blog/$slug` の詳細面。トップの自己紹介文は一覧コンポーネントに直書きする。
 _Avoid_: Posts（公開側の機能名は Blog）
 
 ## Example dialogue
@@ -35,6 +31,3 @@ Expert: 「Published Post だけが Blog の対象。Draft は出ない。」
 
 Dev: 「本文は HTML？」
 Expert: 「いや PostBody は MDX。`posts/` に置いてビルド時にコンパイルする。」
-
-Dev: 「Profile も MDX？」
-Expert: 「いまはコード管理の静的情報。Blog の Post とは別。」

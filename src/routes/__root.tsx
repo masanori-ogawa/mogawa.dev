@@ -4,8 +4,6 @@ import {
   Scripts,
   createRootRoute,
 } from '@tanstack/react-router'
-import { SiteFooter, SiteHeader } from '#/features/shell/SiteChrome'
-import { SITE_NAME } from '#/lib/site'
 import appCss from '../styles.css?url'
 
 export const Route = createRootRoute({
@@ -16,7 +14,7 @@ export const Route = createRootRoute({
         name: 'viewport',
         content: 'width=device-width, initial-scale=1',
       },
-      { title: SITE_NAME },
+      { title: 'Masanori Ogawa' },
     ],
     links: [
       { rel: 'stylesheet', href: appCss },
@@ -54,9 +52,7 @@ function RootDocument({ children }: { children: React.ReactNode }) {
         <HeadContent />
       </head>
       <body className="min-h-screen antialiased">
-        <SiteHeader />
         <main>{children}</main>
-        <SiteFooter />
         <Scripts />
       </body>
     </html>
