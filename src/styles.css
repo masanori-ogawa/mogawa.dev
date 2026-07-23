@@ -14,7 +14,11 @@
 body {
   margin: 0;
   background:
-    radial-gradient(circle at top left, rgba(37, 99, 235, 0.08), transparent 40%),
+    radial-gradient(
+      circle at top left,
+      rgba(37, 99, 235, 0.08),
+      transparent 40%
+    ),
     var(--bg);
   color: var(--fg);
   font-family: system-ui, sans-serif;

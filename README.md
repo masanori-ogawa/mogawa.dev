@@ -36,6 +36,7 @@ bun run dev
 ## 検証
 
 ```bash
+bun run lint
 bun run typecheck
 bun run build
 ```
@@ -48,6 +49,8 @@ bun run build
 
 ```bash
 bun run dev
+bun run lint
+bun run lint:fix
 bun run typecheck
 bun run build
 bun run deploy

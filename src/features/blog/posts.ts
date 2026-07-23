@@ -1,5 +1,5 @@
-import { compareDesc, parseISO } from 'date-fns'
 import { allPosts } from 'content-collections'
+import { compareDesc, parseISO } from 'date-fns'
 
 export type BlogPost = (typeof allPosts)[number]
 

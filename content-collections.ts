@@ -1,21 +1,21 @@
 import { defineCollection, defineConfig } from '@content-collections/core'
 import { compile, run } from '@mdx-js/mdx'
-import * as runtime from 'react/jsx-runtime'
 import { createElement } from 'react'
+import * as runtime from 'react/jsx-runtime'
 import { renderToStaticMarkup } from 'react-dom/server'
-import { z } from 'zod'
+import * as v from 'valibot'
 
 const posts = defineCollection({
   name: 'posts',
   directory: 'posts',
   include: '**/*.mdx',
-  schema: z.object({
-    title: z.string(),
-    summary: z.string(),
-    publishedAt: z.string(),
-    draft: z.boolean().optional(),
-    ogImageUrl: z.string().optional(),
-    content: z.string(),
+  schema: v.object({
+    title: v.string(),
+    summary: v.string(),
+    publishedAt: v.string(),
+    draft: v.optional(v.boolean()),
+    ogImageUrl: v.optional(v.string()),
+    content: v.string(),
   }),
   transform: async (document) => {
     const compiled = await compile(document.content, {

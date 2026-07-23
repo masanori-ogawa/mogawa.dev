@@ -13,9 +13,8 @@ export function BlogIndex({ posts }: { posts: BlogPost[] }) {
       <header>
         <h1 className="text-3xl font-semibold tracking-tight">mogawa.dev</h1>
         <p className="mt-6 leading-relaxed text-slate-700">
-          フロントエンドを中心に、TypeScript / React
-          でのプロダクト開発を行う Web
-          エンジニアです。型安全な設計と、運用しやすい UI
+          フロントエンドを中心に、TypeScript / React でのプロダクト開発を行う
+          Web エンジニアです。型安全な設計と、運用しやすい UI
           実装を大切にしています。
         </p>
         <ul className="mt-4 flex flex-wrap gap-4 text-sm">
@@ -54,7 +53,9 @@ export function BlogIndex({ posts }: { posts: BlogPost[] }) {
                     <h3 className="text-lg font-medium text-slate-900 group-hover:underline">
                       {post.title}
                     </h3>
-                    <p className="mt-1 text-sm text-slate-600">{post.summary}</p>
+                    <p className="mt-1 text-sm text-slate-600">
+                      {post.summary}
+                    </p>
                   </div>
                   <time
                     dateTime={post.publishedAt}
