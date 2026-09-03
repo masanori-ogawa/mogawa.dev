@@ -37,7 +37,7 @@
     "@tailwindcss/typography": "^0.5.16",
     "@types/node": "^22.10.2",
     "@types/react": "^19.2.0",
-    "@types/react-dom": "^19.2.0",
+    "@types/react-dom": "^19.2.5",
     "@vitejs/plugin-react": "^5.0.4",
     "typescript": "^5.9.3",
     "valibot": "^1.4.2",
