@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+set -euo pipefail
+ROOT="$(cd "$(dirname "$0")/.." && pwd)"
+if [[ -x "${BW_ENV_BIN:-}" ]]; then
+  BIN="$BW_ENV_BIN"
+elif [[ -x "$HOME/dev/scripts/bw-env" ]]; then
+  BIN="$HOME/dev/scripts/bw-env"
+elif command -v bw-env >/dev/null 2>&1; then
+  BIN="$(command -v bw-env)"
+else
+  echo "bw-env 本体が見つかりません。$HOME/dev/scripts/bw-env を配置してください。" >&2
+  exit 1
+fi
+exec "$BIN" --repo mogawa-dev --root "$ROOT" "$@"
